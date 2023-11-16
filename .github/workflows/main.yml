@@ -17,5 +17,7 @@ jobs:
       - name: Pylint
         run:  find . -name "*.py" | xargs pylint
       - name: Pytest
-        run:  find . -name "test_*.py" | xargs pytest
+        run: |
+          mkdir pedidos
+          find . -name "test_*.py" | xargs pytest
 
