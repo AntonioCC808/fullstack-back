@@ -1,11 +1,12 @@
 """Tests persistencia"""
-
+import pathlib
 
 from backend.persistencia import guardar_pedido
 
 
 def test_persistencia():
     """Test persistencia microactividad"""
+    pathlib.Path("../pedidos/").mkdir(exist_ok=True)
     with open("../pedidos/pedidos.txt", "w", encoding="utf-8") as file:
         file.write("")
     pedidos = [

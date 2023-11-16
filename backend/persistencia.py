@@ -17,4 +17,4 @@ def guardar_pedido(nombre: str, apellidos: str) -> None:
     None
     """
     with open("../pedidos/pedidos.txt", "a", encoding="utf-8") as file:
-        file.write(f"{nombre} {apellidos} \n")
+        file.write(f"-{nombre} {apellidos}\n")
