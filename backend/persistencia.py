@@ -1,3 +1,6 @@
+"""Persistencia"""
+
+
 def guardar_pedido(nombre: str, apellidos: str) -> None:
     """
     Save a customer order in the "pedidos.txt" file.

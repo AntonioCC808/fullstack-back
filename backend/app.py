@@ -1,3 +1,5 @@
+"""Flask App"""
+
 import flask
 from flask import Flask, request, redirect
 

@@ -1,4 +1,7 @@
+"""API"""
+
 from typing import List, Any
+
 
 def obtener_primer_elemento(lista: List[Any]) -> Any:
     """
@@ -15,6 +18,7 @@ def obtener_primer_elemento(lista: List[Any]) -> Any:
         El primer elemento de la lista.
     """
     return lista[0]
+
 
 def inserta_elemento_al_final(lista: List[Any], elemento: Any) -> None:
     """
@@ -33,6 +37,7 @@ def inserta_elemento_al_final(lista: List[Any], elemento: Any) -> None:
     """
     lista.append(elemento)
 
+
 def inserta_elemento_al_principio(lista: List[Any], elemento: Any) -> None:
     """
     Inserta un elemento al principio de la lista.
@@ -49,6 +54,7 @@ def inserta_elemento_al_principio(lista: List[Any], elemento: Any) -> None:
     None
     """
     lista.insert(0, elemento)
+
 
 def borra_lista(lista: List[Any]) -> None:
     """

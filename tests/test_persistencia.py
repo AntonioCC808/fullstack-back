@@ -1,7 +1,11 @@
+"""Tests persistencia"""
+
+
 from backend.persistencia import guardar_pedido
 
 
 def test_persistencia():
+    """Test persistencia microactividad"""
     with open("../pedidos/pedidos.txt", "w", encoding="utf-8") as file:
         file.write("")
     pedidos = [
