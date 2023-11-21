@@ -1,7 +1,7 @@
 """Flask App"""
 
 import flask
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, Response
 
 app = Flask(__name__)
 
@@ -28,3 +28,34 @@ def get_form_data() -> flask.Response:
     apellidos = request.form.get("apellidos")
     print(f"{nombre} {apellidos}")
     return redirect("http://localhost/solicita_pedido.html", code=302)
+
+
+@app.route("/checksize", methods=['POST'])
+def checksize():
+    """
+    Endpoint to check the availability of a size.
+
+    Returns
+    -------
+    Response
+        A Flask Response containing the availability
+         message with appropriate status code and headers.
+    """
+    # Get the size from the form data in the request
+    size = request.form.get("size")
+
+    # Check if the size is not "pequeña"
+    if size == "S":
+        mensaje = "No disponible"
+    elif size == "":
+        mensaje = ""
+    else:
+        mensaje = "Disponible"
+
+    # Create a Flask Response with the availability message,
+    # status code 200, and CORS header
+    response = Response(
+        mensaje, 200, {'Access-Control-Allow-Origin': '*'}
+    )
+
+    return response
